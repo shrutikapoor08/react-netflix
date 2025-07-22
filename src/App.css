@@ -5,20 +5,20 @@
   text-align: center;
 }
 
-.movie-card{
-  height: 250px; 
-  width: 400px; 
+.movie-card {
+  height: 250px;
+  width: 400px;
   display: flex;
   position: relative;
+  margin: 0px 10px;
 }
 
 .movie-image {
-height: 250px;
-width: 400px;
-background-size: cover;
-border-radius: 8px;
+  height: 250px;
+  width: 400px;
+  background-size: cover;
+  border-radius: 8px;
 }
-
 
 .movie-title {
   font-size: 1.5em;
@@ -27,6 +27,11 @@ border-radius: 8px;
   left: 10px;
   color: white;
   text-align: left;
+}
+
+.movie-carousel {
+  display: flex;
+  height: 250px;
 }
 
 @keyframes logo-spin {
