@@ -21,6 +21,10 @@ const MOVIE_DATA = {
 const TMDB_IMAGES_ASSET_URL = "https://image.tmdb.org/t/p/w500/";
 
 function App() {
+  const backgroundImage = MOVIE_DATA.backdrop_path
+    ? `url(${TMDB_IMAGES_ASSET_URL}${MOVIE_DATA.backdrop_path})`
+    : "none";
+
   return (
     <>
       <h1> Netflix </h1>
@@ -28,9 +32,10 @@ function App() {
         <div
           className="movie-image"
           style={{
-            backgroundImage: `url(${TMDB_IMAGES_ASSET_URL}${MOVIE_DATA.backdrop_path})`,
+            backgroundImage,
           }}
-        ></div>
+          role="img"
+        />
 
         <div className="movie-header">
           <p className="movie-title">{MOVIE_DATA.title}</p>
