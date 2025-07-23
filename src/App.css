@@ -32,6 +32,8 @@
 .movie-carousel {
   display: flex;
   height: 250px;
+  width: 100%;
+  overflow: scroll;
 }
 
 @keyframes logo-spin {
