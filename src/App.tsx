@@ -1,5 +1,6 @@
 import "./App.css";
 import { MovieData } from "./types";
+import MovieCard from "./components/MovieCard";
 
 const TMDB_IMAGES_ASSET_URL = "https://image.tmdb.org/t/p/w500/";
 
@@ -102,21 +103,11 @@ const App: React.FC = () => {
       <h1> Netflix </h1>
       <div className="movie-carousel">
         {MOVIE_DATA?.results?.map((movie) => (
-          <div className="movie-card" key={movie.id}>
-            <div
-              className="movie-image"
-              style={{
-                backgroundImage: movie.backdrop_path
-                  ? `url(${TMDB_IMAGES_ASSET_URL}${movie.backdrop_path})`
-                  : "none",
-              }}
-              role="img"
-            />
-
-            <div className="movie-header">
-              <p className="movie-title">{movie.title}</p>
-            </div>
-          </div>
+          <MovieCard
+            key={movie.id}
+            movie={movie}
+            imageBaseUrl={TMDB_IMAGES_ASSET_URL}
+          />
         ))}
       </div>
     </>

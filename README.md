@@ -4,11 +4,10 @@
 Key objectives - JSX, component design. 
 
 ✅ Step 2: Add multiple movie cards. -
-Key objectives - array.map, conditional rendering, component structuring, css styles
+Key objectives - array.map, conditional rendering, css styles
+Step 3 - Adding formatting, setting standards., moving to typescript, component structuring, 
 
-Step - Adding formatting, setting standards., moving to typescript
-
-Step 3: Add event handling - 
+Step 4: Add event handling - 
 hover effect, handling events. 
 
 
