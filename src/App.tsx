@@ -1,8 +1,9 @@
 import "./App.css";
+import { MovieData } from "./types";
 
 const TMDB_IMAGES_ASSET_URL = "https://image.tmdb.org/t/p/w500/";
 
-const MOVIE_DATA = {
+const MOVIE_DATA: MovieData = {
   page: 1,
   results: [
     {
@@ -95,7 +96,7 @@ const MOVIE_DATA = {
   total_results: 195,
 };
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <>
       <h1> Netflix </h1>
