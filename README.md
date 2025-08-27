@@ -1,4 +1,5 @@
-# React + Vite
+# React Crash Course
+This is an accompainment to my crash course on YouTube - https://www.youtube.com/shrutikapoor08
 
 ✅ Step 1: Add a single movie card - 
 Key objectives - JSX, component design. 
