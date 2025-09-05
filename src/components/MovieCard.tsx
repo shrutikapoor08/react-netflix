@@ -8,7 +8,7 @@ interface MovieCardProps {
 
 const MovieCard: React.FC<MovieCardProps> = ({ movie, imageBaseUrl }) => {
   return (
-    <div className="movie-card" key={movie.id}>
+    <div className="movie-card">
       <div
         className="movie-image"
         style={{
