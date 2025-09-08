@@ -31,4 +31,11 @@ export type MovieListProps = {
 export type MovieCardProps = {
   movie: Movie;
   onMovieClick: (movie: any) => void;
+
+} 
+ export interface TMDBResponse {
+    page: number
+    results: Movie[]
+    total_pages: number
+    total_results: number
 }

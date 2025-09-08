@@ -1,10 +1,13 @@
-# React + Vite
+# React Crash Course
+This is an accompainment to my crash course on YouTube - https://www.youtube.com/shrutikapoor08
 
-✅ Step 1: Add a single movie card - ![Step 1](step-1.png)
+✅ Step 1: Add a single movie card - 
 Key objectives - JSX, component design. 
+![Step 1](./src/assets/step-1.png)
 
 ✅ Step 2: Add multiple movie cards. -
 Key objectives - array.map, conditional rendering, css styles
+<<<<<<< HEAD
 ![Step 2](step-2.png)
 ✅ Step 3 - Adding formatting, setting standards, moving to typescript, component structuring, 
 
@@ -26,6 +29,12 @@ Key objectives - array.map, conditional rendering, css styles
 
 ---
 
+=======
+
+![Step 2](./src/assets/step-2.png)
+
+✅ Step 3 - Adding formatting, setting standards., moving to typescript, component structuring, 
+>>>>>>> fetch-data
 
 Step 4: Add event handling - 
 hover effect, handling events. 
