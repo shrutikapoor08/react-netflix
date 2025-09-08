@@ -1,12 +1,13 @@
 /* Netflix Hero Section Styles */
 .hero {
   position: relative;
-  height: 100vh;
-  min-height: 600px;
+  /* height: 80vh; */
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  max-width: 120rem;
 }
 .overlay {
   background: url("../assets/images/hero-background.jpg");
@@ -89,7 +90,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero {
-    min-height: 500px;
+    min-height: 37rem;
   }
 
   .backgroundGrid {

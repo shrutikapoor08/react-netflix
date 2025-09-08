@@ -6,11 +6,15 @@
   right: 0;
   z-index: 100;
   padding: 20px 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    transparent 100%
+  );
 }
 
 .container {
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
@@ -27,40 +31,6 @@
   width: auto;
   object-fit: contain;
   filter: brightness(1.2) saturate(1.3);
-}
-
-.controls {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.languageSelector {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.languageSelect {
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 4px;
-  color: white;
-  padding: 8px 32px 8px 12px;
-  font-size: 14px;
-  font-weight: 400;
-  appearance: none;
-  cursor: pointer;
-  min-width: 120px;
-}
-
-.languageSelect:hover {
-  border-color: rgba(255, 255, 255, 0.6);
-}
-
-.languageSelect:focus {
-  outline: 2px solid rgba(255, 255, 255, 0.8);
-  outline-offset: 2px;
 }
 
 .chevronIcon {
@@ -95,17 +65,7 @@
   .container {
     padding: 0 16px;
   }
-  
-  .logoImage {
-    height: 28px;
-  }
-  
-  .languageSelect {
-    min-width: 100px;
-    padding: 6px 28px 6px 10px;
-    font-size: 13px;
-  }
-  
+
   .signOutButton {
     padding: 6px 12px;
     font-size: 13px;

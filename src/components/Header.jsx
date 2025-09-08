@@ -7,7 +7,7 @@ const Header = () => {
     <header className={ styles.header }>
       <div className={ styles.container }>
         <div className={ styles.logo }>
-          <h1 className="text-3xl md:text-4xl font-bold text-red-600 ">NETFLIX</h1>
+          <h1 className="text-xl lg:text-4xl font-bold text-red-600 ">REACTFLIX</h1>
         </div>
       </div>
     </header>
