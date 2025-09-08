@@ -1,4 +1,4 @@
-export interface Movie {
+export type Movie = {
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
@@ -15,9 +15,20 @@ export interface Movie {
   vote_count: number;
 }
 
-export interface MovieData {
+export type MovieData = {
   page: number;
   results: Movie[];
   total_pages: number;
   total_results: number;
+}
+
+// MovieList Component: Displays a grid of movies
+export type MovieListProps = {
+  movies: Movie[];
+  onMovieClick: (movie: Movie) => void;
+};
+
+export type MovieCardProps = {
+  movie: Movie;
+  onMovieClick: (movie: any) => void;
 }

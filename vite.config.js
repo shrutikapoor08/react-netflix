@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 import path from "path";
+import tailwindcss from "@tailwindcss/vite";
 const config = {
   mode: "development",
   build: {
@@ -16,6 +17,7 @@ const config = {
   esbuild: { jsx: "automatic", jsxImportSource: "react" },
   plugins: [
     react(),
+    tailwindcss(),
     viteStaticCopy({
       targets: [
         { src: "./assets/*", dest: "assets" },
@@ -28,6 +30,10 @@ const config = {
       silent: true,
     }),
   ],
-  resolve: {},
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
 };
 export default defineConfig(config);

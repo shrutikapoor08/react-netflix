@@ -1,8 +1,7 @@
 import "./App.css";
 import { MovieData } from "./types";
-import MovieCard from "./components/MovieCard";
+import MovieList from "./components/MovieList";
 
-const TMDB_IMAGES_ASSET_URL = "https://image.tmdb.org/t/p/w500/";
 
 const MOVIE_DATA: MovieData = {
   page: 1,
@@ -97,20 +96,19 @@ const MOVIE_DATA: MovieData = {
   total_results: 195,
 };
 
+const handleMovieClick = (movie: MovieData["results"][number]) => {
+  // Handle movie click event, e.g., show details or log to console
+  console.log("Movie clicked:", movie);
+};
+
 const App: React.FC = () => {
   return (
-    <>
-      <h1> Netflix </h1>
-      <div className="movie-carousel">
-        {MOVIE_DATA?.results?.map((movie) => (
-          <MovieCard
-            key={movie.id}
-            movie={movie}
-            imageBaseUrl={TMDB_IMAGES_ASSET_URL}
-          />
-        ))}
-      </div>
-    </>
+    <div className="bg-gray-900 text-white min-h-screen">
+      <main className="container mx-auto">
+        <h2 className="text-2xl font-semibold px-4 md:px-6 mb-4">Trending Now</h2>
+        <MovieList movies={MOVIE_DATA.results} onMovieClick={handleMovieClick} />
+      </main>
+    </div>
   );
 };
 
