@@ -18,13 +18,14 @@ Key objectives - array.map, conditional rendering, css styles
 
 ---
 
-Step 4 - Setting up UI and reusable components
- - Header
- - Hero
- - Footer
- - Navbar
- - Card
- - Button
+### ✅ Module 4: Setting up the rest of UI
+
+- Adding Header, Hero
+- CSS styles using CSS modules
+- Responsive layout for mobile → desktop
+
+---
+
 
 Step 4: Add event handling - 
 hover effect, handling events. 

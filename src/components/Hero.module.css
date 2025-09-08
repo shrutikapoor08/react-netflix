@@ -1,0 +1,167 @@
+/* Netflix Hero Section Styles */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.overlay {
+  background: url("../assets/images/hero-background.jpg");
+  background-position: center;
+  background-blend-mode: darken;
+  background-color: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  opacity: 0.2;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 600px;
+  padding: 0 24px;
+  display: flex;
+}
+
+.textContent {
+  color: white;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 32px;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.ctaButton {
+  background: #e50914;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 16px 32px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  text-transform: none;
+  box-shadow: 0 4px 16px rgba(229, 9, 20, 0.3);
+}
+
+.ctaButton:hover {
+  background: #f40612;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(229, 9, 20, 0.4);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}
+
+.chevronIcon {
+  transition: transform 0.2s ease;
+}
+
+.ctaButton:hover .chevronIcon {
+  transform: translateX(4px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 500px;
+  }
+
+  .backgroundGrid {
+    transform: perspective(800px) rotateX(10deg) rotateY(-3deg);
+  }
+
+  .poster1,
+  .poster2,
+  .poster3,
+  .poster4,
+  .poster5,
+  .poster6 {
+    width: 100px;
+    height: 150px;
+  }
+
+  .poster1 {
+    top: 15%;
+    left: 3%;
+  }
+
+  .poster2 {
+    top: 20%;
+    left: 30%;
+  }
+
+  .poster3 {
+    top: 12%;
+    right: 25%;
+  }
+
+  .poster4 {
+    top: 25%;
+    right: 3%;
+  }
+
+  .poster5 {
+    bottom: 20%;
+    left: 5%;
+  }
+
+  .poster6 {
+    bottom: 15%;
+    right: 20%;
+  }
+
+  .content {
+    padding: 0 16px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    margin-bottom: 24px;
+  }
+
+  .ctaButton {
+    padding: 14px 24px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+}

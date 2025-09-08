@@ -1,7 +1,8 @@
 import "./App.css";
 import { MovieData } from "./types";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
 import MovieList from "./components/MovieList";
-
 
 const MOVIE_DATA: MovieData = {
   page: 1,
@@ -103,10 +104,14 @@ const handleMovieClick = (movie: MovieData["results"][number]) => {
 
 const App: React.FC = () => {
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
-      <main className="container mx-auto">
-        <h2 className="text-2xl font-semibold px-4 md:px-6 mb-4">Trending Now</h2>
-        <MovieList movies={MOVIE_DATA.results} onMovieClick={handleMovieClick} />
+    <div className="bg-black text-white min-h-screen">
+      <Header />
+      <Hero />
+      <main>
+        <div className="container mx-auto">
+          <h2 className="text-2xl font-semibold px-4 md:px-6 mb-4 pt-8">Trending Now</h2>
+          <MovieList movies={MOVIE_DATA.results} onMovieClick={handleMovieClick} />
+        </div>
       </main>
     </div>
   );
