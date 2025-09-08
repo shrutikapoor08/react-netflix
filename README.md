@@ -7,9 +7,7 @@ Key objectives - JSX, component design.
 
 ✅ Step 2: Add multiple movie cards. -
 Key objectives - array.map, conditional rendering, css styles
-<<<<<<< HEAD
 ![Step 2](step-2.png)
-✅ Step 3 - Adding formatting, setting standards, moving to typescript, component structuring, 
 
 ### **✅ Module 3: Building the MovieCard Component**
 
@@ -21,7 +19,7 @@ Key objectives - array.map, conditional rendering, css styles
 
 ---
 
-### ✅ Module 4: Setting up the rest of UI
+### **✅ Module 4: Setting up the rest of UI**
 
 - Adding Header, Hero
 - CSS styles using CSS modules
@@ -29,12 +27,14 @@ Key objectives - array.map, conditional rendering, css styles
 
 ---
 
-=======
+### **✅ Module 5: Data & APIs**
 
-![Step 2](./src/assets/step-2.png)
+- Fetching movie data (mock API / TMDB API)
+- Handling loading + error states
+- Mapping API data to UI components
+- API integration best practices (keys, environment variables)
 
-✅ Step 3 - Adding formatting, setting standards., moving to typescript, component structuring, 
->>>>>>> fetch-data
+---
 
 Step 4: Add event handling - 
 hover effect, handling events. 
