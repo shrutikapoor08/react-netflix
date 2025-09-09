@@ -1,12 +1,14 @@
-import { Movie, MovieListProps } from "../types";
+import type { Movie, MovieListProps } from "@/types";
 import MovieCard from "./MovieCard";
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useNavigate } from '@tanstack/react-router';
 
-const MovieList = ({ movies, onMovieClick }: MovieListProps) => {
+const MovieList = ({ movies }: MovieListProps) => {
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
     const listRef = useRef<HTMLUListElement>(null);
+    const navigate = useNavigate();
 
     const handleScroll = (direction) => {
         const container = listRef.current;
@@ -15,6 +17,10 @@ const MovieList = ({ movies, onMovieClick }: MovieListProps) => {
                 direction === "left" ? -container.clientWidth : container.clientWidth;
             container.scrollTo({ left: scrollAmount, behavior: "smooth" });
         }
+    };
+
+    const handleMovieClick = (movie: Movie) => {
+        navigate({ to: `/movie/${movie.id}` });
     };
 
     return (
@@ -33,7 +39,7 @@ const MovieList = ({ movies, onMovieClick }: MovieListProps) => {
             >
                 {movies.map((movie: Movie) => (
                     <li key={movie.id}>
-                        <MovieCard movie={movie} onMovieClick={onMovieClick} />
+                        <MovieCard movie={movie} onMovieClick={handleMovieClick} />
                     </li>
                 ))}
             </ul>

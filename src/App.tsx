@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import MovieList from "./components/MovieList";
 
-import { TMDBResponse, MovieData, Movie } from "./types";
+import type { TMDBResponse, MovieData, Movie } from "./types";
 
 const API_URL = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc'
 
@@ -67,9 +67,9 @@ const App: React.FC = () => {
       <Hero />
       <main>
         <div className="container mx-auto">
-          <h2 className="text-xl md:text-2xl font-semibold px-4 md:px-6 mb-4 pt-8">Trending Now</h2>
           {loading && <p className="px-4 md:px-6">Loading...</p>}
           {error && <p className="text-red-500 px-4 md:px-6">{error}</p>}
+          <h2 className="text-xl md:text-2xl font-semibold px-4 md:px-6 mb-4 pt-8">Trending Now</h2>
           {movies && <MovieList movies={movies} onMovieClick={handleMovieClick} />}
         </div>
       </main>

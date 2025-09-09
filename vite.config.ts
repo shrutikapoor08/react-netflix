@@ -3,6 +3,8 @@ import react from "@vitejs/plugin-react";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 import path from "path";
 import tailwindcss from "@tailwindcss/vite";
+import { tanstackRouter } from '@tanstack/router-plugin/vite'
+
 const config = {
   mode: "development",
   build: {
@@ -16,8 +18,12 @@ const config = {
   define: { "process.env.NODE_ENV": "'development'" },
   esbuild: { jsx: "automatic", jsxImportSource: "react" },
   plugins: [
-    react(),
     tailwindcss(),
+    tanstackRouter({
+      target: 'react',
+      autoCodeSplitting: true,
+    }),
+    react(),
     viteStaticCopy({
       targets: [
         { src: "./assets/*", dest: "assets" },

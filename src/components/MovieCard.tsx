@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { MovieCardProps } from '../types';
+
 import { Badge } from "@/components/ui/badge"
 import { Star, Play } from "lucide-react"
 import { Card } from './ui/card';
+import type { MovieCardProps } from '@/types';
 
 const TMDB_IMAGES_ASSET_URL = "https://image.tmdb.org/t/p/w500/";
-
-
 
 const MovieCard: React.FC<MovieCardProps> = ({ movie, onMovieClick }) => {
   const [isHovered, setIsHovered] = useState(false)
