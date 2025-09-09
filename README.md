@@ -42,10 +42,10 @@ Key objectives - array.map, conditional rendering, css styles
   
 ---
 
-Horizontal scrolling using useRef
-Step 4: Add event handling - 
-hover effect, handling events. 
+### ✅ Module 7: Horizontal scrolling using useRef
 
+- understanding how to use useRef for implement horizontal scroll
+---
 
 Step 5: routing - clicking opens a new page. 
 
