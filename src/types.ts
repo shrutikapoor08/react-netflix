@@ -25,7 +25,6 @@ export type MovieData = {
 // MovieList Component: Displays a grid of movies
 export type MovieListProps = {
   movies: Movie[];
-  onMovieClick: (movie: Movie) => void;
 };
 
 export type MovieCardProps = {

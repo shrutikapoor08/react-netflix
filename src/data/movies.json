@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "title": "Cyber Voyager",
+        "description": "In a neon-drenched future, a lone hacker must navigate the digital and physical worlds to uncover a corporate conspiracy that threatens to control society.",
+        "poster": "https://placehold.co/500x750/9400D3/FFFFFF?text=Cyber+Voyager",
+        "videoUrl": "https://res.cloudinary.com/dubc3wnbv/video/upload/v1757295154/IMG_2779_bax6bk.mov",
+        "genre": "Sci-Fi"
+    },
+    {
+        "id": 2,
+        "title": "Ocean's Whisper",
+        "description": "A marine biologist discovers a hidden, sentient ecosystem in the deep sea, but must protect it from a powerful corporation seeking to exploit its resources.",
+        "poster": "https://placehold.co/500x750/00008B/FFFFFF?text=Ocean's+Whisper",
+        "videoUrl": "https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+        "genre": "Adventure"
+    },
+    {
+        "id": 3,
+        "title": "The Last Stand",
+        "description": "In a post-apocalyptic world, a small community must defend their last bastion of civilization from a ruthless warlord and his marauding army.",
+        "poster": "https://placehold.co/500x750/A52A2A/FFFFFF?text=The+Last+Stand",
+        "videoUrl": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+        "genre": "Action"
+    },
+    {
+        "id": 4,
+        "title": "Echoes of the Past",
+        "description": "A historian using new technology to view memories of the past uncovers a murder mystery that was never solved, and the killer might still be alive.",
+        "poster": "https://placehold.co/500x750/556B2F/FFFFFF?text=Echoes+of+Past",
+        "videoUrl": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+        "genre": "Mystery"
+    },
+    {
+        "id": 5,
+        "title": "Starlight Comedy",
+        "description": "A struggling stand-up comedian on an intergalactic cruise ship becomes the unlikely hero when the ship is taken over by alien pirates with no sense of humor.",
+        "poster": "https://placehold.co/500x750/FFD700/000000?text=Starlight+Comedy",
+        "videoUrl": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+        "genre": "Comedy"
+    },
+    {
+        "id": 6,
+        "title": "The Crimson Blade",
+        "description": "A disgraced samurai seeks redemption by protecting a small village from a clan of deadly ninja assassins during feudal Japan.",
+        "poster": "https://placehold.co/500x750/DC143C/FFFFFF?text=Crimson+Blade",
+        "videoUrl": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+        "genre": "Action"
+    },
+    {
+        "id": 7,
+        "title": "Galactic Odyssey",
+        "description": "A team of explorers travels through a newly discovered wormhole to find a new home for humanity, but they encounter strange new worlds and dangerous alien species.",
+        "poster": "https://placehold.co/500x750/1E90FF/FFFFFF?text=Galactic+Odyssey",
+        "videoUrl": "https://storage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+        "genre": "Sci-Fi"
+    },
+    {
+        "id": 8,
+        "title": "Jungle Quest",
+        "description": "An adventurous archaeologist races against a rival treasure hunter to find a legendary lost city deep within the Amazon rainforest.",
+        "poster": "https://placehold.co/500x750/228B22/FFFFFF?text=Jungle+Quest",
+        "videoUrl": "https://storage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+        "genre": "Adventure"
+    }
+]

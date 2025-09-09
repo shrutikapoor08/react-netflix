@@ -47,12 +47,19 @@ Key objectives - array.map, conditional rendering, css styles
 - understanding how to use useRef for implement horizontal scroll
 ---
 
-### Module 8: Implement routing
+### ✅ Module 8: Implement routing
 
 - implement with TanStack Router
+
 ---
 
-Step 5: routing - clicking opens a new page. 
+### ✅ Module 9: Implement VideoPlayer component
+
+- custom hook
+- calling TanStack router loader and useParams
+- VideoPlayer component
+
+---
 
 Step - react query for better data handling
 
