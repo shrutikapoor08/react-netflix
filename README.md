@@ -36,12 +36,16 @@ Key objectives - array.map, conditional rendering, css styles
 
 ---
 
+### ✅ Module 6: Productionizing UI
+
+- Accessibility
+  
+---
+
+Horizontal scrolling using useRef
 Step 4: Add event handling - 
 hover effect, handling events. 
 
-
-Step 4: Fetching api using useEffect 
-managing data, handling error states, implementing loading.
 
 Step 5: routing - clicking opens a new page. 
 
@@ -49,12 +53,7 @@ Step - react query for better data handling
 
 Step - infinite scrolling
 
-Step - performanc eoptimization - image optimization, preloading assets, proper format
-Step - accessibility
+Step - performance eoptimization - image optimization, preloading assets, proper format
 Step - clerk add - auth
 
 Step - adding error monitoring
-
-
-Productionaizing
-Step 6: 
