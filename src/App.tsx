@@ -1,5 +1,7 @@
 import "./App.css";
 import { usePopularMovies } from "./lib/usePopularMovies";
+import { useEffect } from "react";
+import useThemeStore from "./store/themeStore";
 
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -11,9 +13,14 @@ import type { Movie } from "./types";
 
 const App: React.FC = () => {
   const { movies, error, loading } = usePopularMovies();
+  const { isDarkMode, initializeTheme } = useThemeStore();
+
+  useEffect(() => {
+    initializeTheme();
+  }, [initializeTheme]);
 
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
       <Hero />
       <main>

@@ -61,6 +61,14 @@ Key objectives - array.map, conditional rendering, css styles
 
 ---
 
+### ✅ **Module 10: State Management with Zustand**
+
+- When local state breaks down
+- Introducing Zustand store
+- Managing global state (dark mode)
+  
+---
+
 Step - react query for better data handling
 
 Step - infinite scrolling

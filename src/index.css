@@ -15,6 +15,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Light mode root styles */
+:root:not(.dark) {
+  color-scheme: light;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -24,6 +29,13 @@ body {
   padding: 0;
   background-color: #000000;
   color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light mode body styles */
+:root:not(.dark) body {
+  background-color: #ffffff;
+  color: #333333;
 }
 
 #root {

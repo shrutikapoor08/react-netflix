@@ -16,7 +16,8 @@
     "@tanstack/react-router-devtools": "^1.131.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwindcss": "^4.1.13"
+    "tailwindcss": "^4.1.13",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@radix-ui/react-slot": "^1.2.3",

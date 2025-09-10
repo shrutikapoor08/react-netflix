@@ -33,7 +33,7 @@
 }
 
 .textContent {
-  color: white;
+  color: var(--text-color);
 }
 
 .title {
@@ -41,7 +41,7 @@
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 24px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-shadow: 2px 2px 4px var(--text-shadow-color);
 }
 
 .subtitle {
@@ -49,7 +49,7 @@
   font-weight: 400;
   margin-bottom: 32px;
   opacity: 0.9;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 2px var(--text-shadow-color);
 }
 
 .ctaButton {

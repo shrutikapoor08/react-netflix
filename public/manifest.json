@@ -1,6 +1,6 @@
 {
-  "short_name": "TanStack App",
-  "name": "Create TanStack App Sample",
+  "short_name": "Reactflix",
+  "name": "Netflix Clone",
   "icons": [
     {
       "src": "favicon.ico",

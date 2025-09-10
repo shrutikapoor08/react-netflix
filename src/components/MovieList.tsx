@@ -27,8 +27,7 @@ const MovieList = ({ movies }: MovieListProps) => {
         <div className="relative group flex">
             <button
                 onClick={() => handleScroll("left")}
-                className="left-0 top-0 bottom-0  bg-black bg-opacity-50 hover:bg-opacity-80 text-white opacity-100 transition-opacity duration-300 flex items-center justify-center z-50 mr-2 p-0"
-                style={{}}
+                className="left-0 top-0 bottom-0 bg-black/50 dark:bg-black/50 hover:bg-black/80 dark:hover:bg-black/80 text-white opacity-100 transition-all duration-300 flex items-center justify-center z-50 mr-2 p-0"
             >
                 <ChevronLeft size={24} />
             </button>
@@ -45,7 +44,7 @@ const MovieList = ({ movies }: MovieListProps) => {
             </ul>
             <button
                 onClick={() => handleScroll("right")}
-                className="right-0 top-0 bottom-0 bg-black bg-opacity-50 hover:bg-opacity-80 text-white opacity-100 transition-opacity duration-300 flex items-center justify-center z-50 ml-2 p-0"
+                className="right-0 top-0 bottom-0 bg-black/50 dark:bg-black/50 hover:bg-black/80 dark:hover:bg-black/80 text-white opacity-100 transition-all duration-300 flex items-center justify-center z-50 ml-2 p-0"
             >
                 <ChevronRight size={24} />
             </button>

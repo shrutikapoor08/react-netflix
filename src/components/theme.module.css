@@ -1,0 +1,12 @@
+/* _theme.module.css */
+.light {
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --text-shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+.dark {
+  --background-color: #333333;
+  --text-color: #ffffff;
+  --text-shadow-color: rgba(0, 0, 0, 0.8);
+}
