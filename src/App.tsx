@@ -3,7 +3,6 @@ import { usePopularMovies } from "./lib/usePopularMovies";
 import { useEffect } from "react";
 import useThemeStore from "./store/themeStore";
 
-import Header from "./components/Header";
 import Hero from "./components/Hero";
 import MovieList from "./components/MovieList";
 
@@ -21,7 +20,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
-      <Header />
+
       <Hero />
       <main>
         <div className="container mx-auto">
