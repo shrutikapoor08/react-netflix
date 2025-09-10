@@ -1,24 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import MoviePlayer from './MoviePlayer';
 import { Link, useParams } from '@tanstack/react-router';
 import { useMovieDetail } from '@/lib/useMovieDetail';
 import movieData from '../data/movies.json';
+import { onTTFB } from 'web-vitals';
 
 
 
-const MovieDetail: React.FC = () => {
-    const { id: movieId } = useParams({ from: '/movie/$id' });
-    const { movie, loading, error } = useMovieDetail(movieId);
+const MovieDetail: React.FC = ({ movie }) => {
 
-    //hack to get movie
+    useEffect(() => {
+        onTTFB(console.log);
+
+    })
     const randomMovie = movieData[Math.floor(Math.random() * movieData.length)];
 
-    if (loading) {
-        return <div className="container mx-auto px-4 py-8">Loading...</div>;
-    }
-    if (error) {
-        return <div className="container mx-auto px-4 py-8 text-red-500">{error}</div>;
-    }
+    // if (loading) {
+    //     return <div className="container mx-auto px-4 py-8">Loading...</div>;
+    // }
+    // if (error) {
+    //     return <div className="container mx-auto px-4 py-8 text-red-500">{error}</div>;
+    // }
     if (!movie) {
         return <div className="container mx-auto px-4 py-8">Movie not found.</div>;
     }
