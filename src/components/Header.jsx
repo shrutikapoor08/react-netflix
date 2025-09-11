@@ -13,12 +13,12 @@ const Header = () => {
         </div>
         <div className={ styles.actions }>
           <ThemeToggle />
-          <SignedOut>
+          {/* <SignedOut>
             <SignInButton />
           </SignedOut>
           <SignedIn>
             <UserButton />
-          </SignedIn>
+          </SignedIn> */}
 
         </div>
 
