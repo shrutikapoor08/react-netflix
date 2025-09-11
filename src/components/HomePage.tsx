@@ -1,21 +1,15 @@
 import { useEffect } from "react";
-import useThemeStore from "./store/themeStore";
-import { useLoaderData } from "@tanstack/react-router";
+import useThemeStore from "../store/themeStore";
+import Hero from "./Hero";
+import MovieList from "./MovieList";
+import type { Movie } from "../types";
 
-import Hero from "./components/Hero";
-import MovieList from "./components/MovieList";
-
-import type { Movie } from "./types";
-
-interface AppProps {
-  serverMovies?: Movie[];
+interface HomePageProps {
+  movies: Movie[];
 }
 
-const App: React.FC<AppProps> = ({ serverMovies }) => {
-  const { isDarkMode, initializeTheme } = useThemeStore();
-  
-  // Use server-rendered data if available, otherwise fallback to empty array
-  const movies = serverMovies || [];
+const HomePage: React.FC<HomePageProps> = ({ movies }) => {
+  const { initializeTheme } = useThemeStore();
 
   useEffect(() => {
     initializeTheme();
@@ -42,4 +36,4 @@ const App: React.FC<AppProps> = ({ serverMovies }) => {
   );
 };
 
-export default App;
+export default HomePage;

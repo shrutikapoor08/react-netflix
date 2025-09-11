@@ -1,44 +1,27 @@
 import MovieDetail from '@/components/MovieDetail'
 import { createFileRoute } from '@tanstack/react-router'
+import { getMovieById } from '@/lib/movieServerFn'
 
-const token = import.meta.env.VITE_TMDB_AUTH_TOKEN;
-const API_URL = "https://api.themoviedb.org/3/movie/";
-import { createServerFn } from '@tanstack/react-start'
-
-
-
-export const getMovieById = createServerFn('GET', async (id: string) => {
-  try {
-    const response = await fetch(`${API_URL}${id}`, {
-      headers: {
-        accept: "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch movie: ${response.statusText}`);
-    }
-
-    const video = await response.json();
-    console.log({ video });
-    return { video };
-  } catch (error) {
-    // Properly handle the error
-    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
-    throw new Error(`Movie fetch failed: ${errorMessage}`);
-  }
-})
 export const Route = createFileRoute('/movie/$id')({
   loader: async ({ params }) => {
-    return getMovieById(params?.id)
-
-  }, component: MovieDetailPage,
+    if (!params?.id) {
+      throw new Error('Movie ID is required')
+    }
+    console.log({ params })
+    return await getMovieById({
+      data: params.id
+    })
+  },
+  component: MovieDetailPage,
+  errorComponent: ({ error }) => (
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-2xl font-bold text-red-500 mb-4">Error Loading Movie</h1>
+      <p className="text-red-400">{error.message}</p>
+    </div>
+  ),
 })
 
 function MovieDetailPage() {
-  const { video } = Route.useLoaderData();
+  const { video } = Route.useLoaderData()
   return <MovieDetail movie={video} />
-
 }
-
