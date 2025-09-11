@@ -17,8 +17,7 @@
     "@tanstack/react-router-devtools": "^1.131.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwindcss": "^4.1.13",
-    "zustand": "^5.0.2"
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
     "@radix-ui/react-slot": "^1.2.3",
@@ -38,6 +37,7 @@
     "vite": "^6.3.5",
     "vite-plugin-static-copy": "^3.1.2",
     "vitest": "^3.0.5",
-    "web-vitals": "^4.2.4"
+    "web-vitals": "^4.2.4",
+    "zustand": "^5.0.2"
   }
 }

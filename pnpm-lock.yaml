@@ -32,9 +32,6 @@ importers:
       tailwindcss:
         specifier: ^4.1.13
         version: 4.1.13
-      zustand:
-        specifier: ^5.0.2
-        version: 5.0.8(@types/react@19.1.8)(react@19.1.0)(use-sync-external-store@1.5.0(react@19.1.0))
     devDependencies:
       '@radix-ui/react-slot':
         specifier: ^1.2.3
@@ -90,6 +87,9 @@ importers:
       web-vitals:
         specifier: ^4.2.4
         version: 4.2.4
+      zustand:
+        specifier: ^5.0.2
+        version: 5.0.8(@types/react@19.1.8)(react@19.1.0)(use-sync-external-store@1.5.0(react@19.1.0))
 
 packages:
 
