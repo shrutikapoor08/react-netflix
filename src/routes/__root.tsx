@@ -5,7 +5,7 @@ import { ClerkProvider } from '@clerk/clerk-react'
 import { HeadContent, Scripts } from '@tanstack/react-router'
 import Header from "../components/Header"
 import '../index.css'
-import '../App.css'
+import appCss from '~/App.css?url'
 import '../components/Header.module.css'
 import '../components/Hero.module.css'
 import '../components/theme.module.css'
@@ -32,9 +32,9 @@ export const Route = createRootRoute({
       {
         name: 'description',
         content: 'React Netflix Clone Application built by Shruti Kapoor',
-      },
-    ],
+      }],
     links: [
+      { rel: 'stylesheet', href: appCss },
       { rel: 'icon', href: '/favicon.ico' },
       { rel: 'apple-touch-icon', href: '/logo192.png' },
       { rel: 'manifest', href: '/manifest.json' },

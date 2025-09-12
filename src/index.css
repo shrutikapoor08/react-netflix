@@ -1,8 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
-
 :root {
-  font-family: "Inter", "Poppins", system-ui, Avenir, Helvetica, Arial,
-    sans-serif;
+  font-family:
+    "Inter", "Poppins", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   padding: 0;
@@ -13,7 +11,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
   /* Theme variables for CSS modules */
   --background-color: #000000;
   --text-color: #ffffff;
@@ -34,7 +32,9 @@ body {
   padding: 0;
   background-color: #000000;
   color: white;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* Light mode body styles */
