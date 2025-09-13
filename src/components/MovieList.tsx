@@ -6,8 +6,6 @@ import { useNavigate } from '@tanstack/react-router';
 import '../App.css'
 
 const MovieList = ({ movies }: MovieListProps) => {
-    const [showLeftArrow, setShowLeftArrow] = useState(false);
-    const [showRightArrow, setShowRightArrow] = useState(true);
     const listRef = useRef<HTMLUListElement>(null);
     const navigate = useNavigate();
 

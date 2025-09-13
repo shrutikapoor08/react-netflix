@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from '@tanstack/react-router';
 import { Star, Play, Plus, ArrowLeft } from 'lucide-react';
 import { Badge } from './ui/badge';
+import MoviePlayer from './MoviePlayer';
 
 interface MovieDetailProps {
   movie: {
@@ -31,8 +32,8 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ movie }) => {
           <p className="text-lg text-muted-foreground mb-8 max-w-md">
             The movie you're looking for doesn't exist or has been removed.
           </p>
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="inline-flex items-center gap-2 bg-white/10 text-foreground border border-border rounded-lg px-5 py-3 text-sm font-medium cursor-pointer transition-all duration-200 no-underline hover:bg-white/20 hover:-translate-x-1 focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2"
           >
             <ArrowLeft size={16} />
@@ -55,8 +56,8 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ movie }) => {
 
   return (
     <div className="max-w-6xl mx-auto px-6 md:px-24 min-h-screen bg-background text-foreground">
-      <Link 
-        to="/" 
+      <Link
+        to="/"
         className="inline-flex items-center gap-2 bg-white/10 text-foreground border border-border rounded-lg px-5 py-3 text-sm font-medium cursor-pointer transition-all duration-200 mb-8 mt-6 no-underline hover:bg-white/20 hover:-translate-x-1 focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2"
       >
         <ArrowLeft size={16} />
@@ -73,7 +74,7 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ movie }) => {
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/40 to-black/80" />
-        
+
         <div className="relative z-10 p-10 lg:p-15 h-full flex items-center">
           <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] xl:grid-cols-[300px_1fr] gap-10 lg:gap-10 xl:gap-10 items-start w-full">
             {/* Poster */}
@@ -93,10 +94,10 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ movie }) => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 text-white drop-shadow-lg">
                 {movie.title}
               </h1>
-              
+
               <div className="flex items-center gap-6 mb-6 flex-wrap">
                 <span className="text-lg text-white/80 font-medium">{releaseYear}</span>
-                
+
                 <div className="flex items-center gap-2 bg-black/60 px-4 py-2 rounded-lg backdrop-blur-sm">
                   <div className="text-yellow-400 text-lg">
                     {'★'.repeat(ratingStars)}{'☆'.repeat(5 - ratingStars)}
@@ -118,10 +119,6 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ movie }) => {
               )}
 
               <div className="flex gap-4 mb-8 flex-wrap">
-                <button className="inline-flex items-center gap-3 bg-[#e50914] hover:bg-[#f40612] text-white border-none rounded-lg px-8 py-4 text-lg font-semibold cursor-pointer transition-all duration-200 min-w-40 justify-center hover:-translate-y-0.5 hover:shadow-lg hover:shadow-red-500/40">
-                  <Play size={20} fill="white" />
-                  Play Movie
-                </button>
                 <button className="inline-flex items-center gap-3 bg-white/20 hover:bg-white/30 text-white border-2 border-white/30 hover:border-white/50 rounded-lg px-7 py-3.5 text-base font-medium cursor-pointer transition-all duration-200 backdrop-blur-sm hover:-translate-y-0.5">
                   <Plus size={20} />
                   Add to List
@@ -131,13 +128,17 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ movie }) => {
           </div>
         </div>
       </div>
+      <div>
+        <MoviePlayer movie={movie} />
+
+      </div>
 
       {/* Details Section */}
       <div className="bg-card border border-border rounded-xl p-8 mb-8">
         <h2 className="text-2xl font-bold text-card-foreground mb-6 font-['Poppins']">
           Movie Details
         </h2>
-        
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="flex flex-col gap-2">
             <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
