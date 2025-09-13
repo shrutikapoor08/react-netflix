@@ -1,18 +1,18 @@
 @import "tailwindcss";
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+
 @custom-variant dark (&:is(.dark *));
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
+/* ===== TAILWIND THEME CONFIGURATION ===== */
 @theme inline {
+  /* Radius tokens */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Color system for Tailwind */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -31,11 +31,15 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
+  /* Chart colors */
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+
+  /* Sidebar colors */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -46,15 +50,37 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* ===== ROOT VARIABLES ===== */
 :root {
+  /* Base radius */
   --radius: 0.625rem;
+
+  /* Typography */
+  font-family:
+    "Inter", "Poppins", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Rendering optimizations */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Netflix brand colors */
+  --netflix-red: #e50914;
+  --netflix-red-hover: #f40612;
+  --netflix-dark: #141414;
+  --netflix-gray: #2f2f2f;
+
+  /* Light theme colors */
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: var(--netflix-red);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -65,22 +91,22 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --ring: var(--netflix-red);
+
+  /* Chart colors */
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+
+  /* CSS Modules compatibility */
+  --background-color: #ffffff;
+  --text-color: #0a0a0a;
+  --text-shadow-color: rgba(0, 0, 0, 0.15);
 }
 
+/* ===== DARK THEME ===== */
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -88,8 +114,8 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
+  --primary: var(--netflix-red);
+  --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
@@ -99,79 +125,44 @@
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --ring: var(--netflix-red);
+
+  /* Chart colors for dark theme */
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-}
 
-:root {
-  font-family:
-    "Inter", "Poppins", system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  padding: 0;
-  margin: 0;
-
-  color-scheme: dark;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Theme variables for CSS modules */
+  /* CSS Modules compatibility */
   --background-color: #000000;
   --text-color: #ffffff;
   --text-shadow-color: rgba(0, 0, 0, 0.8);
-
-  background-color: #000000;
 }
 
-/* Light mode root styles */
-:root:not(.dark) {
-  color-scheme: light;
-}
-
-* {
+/* ===== BASE STYLES ===== */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #000000;
-  color: white;
+  background-color: var(--background);
+  color: var(--foreground);
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
 }
 
-/* Light mode body styles */
-:root:not(.dark) body {
-  background-color: #ffffff;
-  color: #333333;
+#root {
+  margin: auto;
+  min-height: 100vh;
 }
 
-a {
-  font-weight: 500;
-  color: #e50914;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #f40612;
-}
-
+/* ===== TYPOGRAPHY ===== */
 h1,
 h2,
 h3,
@@ -182,34 +173,46 @@ h6 {
   font-weight: 600;
   line-height: 1.2;
   margin: 0;
+  color: var(--foreground);
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: clamp(2rem, 5vw, 3.2rem);
   line-height: 1.1;
 }
 
+/* ===== INTERACTIVE ELEMENTS ===== */
+a {
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: inherit;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--netflix-red-hover);
+}
+
 button {
-  border-radius: 6px;
+  border-radius: var(--radius);
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #e50914;
-  color: white;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 button:hover {
-  background-color: #f40612;
+  background-color: var(--netflix-red-hover);
   transform: translateY(-1px);
 }
 
-button:focus,
 button:focus-visible {
-  outline: 2px solid rgba(229, 9, 20, 0.8);
+  outline: 2px solid var(--ring);
   outline-offset: 2px;
 }
 
@@ -217,24 +220,27 @@ button:active {
   transform: translateY(0);
 }
 
-/* Netflix-specific utility classes */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== NETFLIX UTILITY CLASSES ===== */
 .netflix-red {
-  color: #e50914;
+  color: var(--netflix-red);
 }
-
 .netflix-bg {
-  background-color: #e50914;
+  background-color: var(--netflix-red);
 }
-
 .netflix-dark {
-  background-color: #141414;
+  background-color: var(--netflix-dark);
 }
-
 .netflix-gray {
-  background-color: #2f2f2f;
+  background-color: var(--netflix-gray);
 }
 
-/* Container utilities */
+/* ===== LAYOUT UTILITIES ===== */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -247,7 +253,7 @@ button:active {
   }
 }
 
-/* Scrollbar utilities */
+/* ===== SCROLLBAR UTILITIES ===== */
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -257,7 +263,7 @@ button:active {
   display: none;
 }
 
-/* Additional utility classes */
+/* ===== ANIMATION UTILITIES ===== */
 .group:hover .group-hover\:scale-110 {
   transform: scale(1.1);
 }
@@ -270,4 +276,31 @@ button:active {
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+/* ===== ANIMATIONS ===== */
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

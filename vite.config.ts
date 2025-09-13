@@ -13,8 +13,8 @@ const config = {
     outDir: "dist",
     emptyOutDir: true,
     sourcemap: true,
-    minify: false,
-    cssMinify: false,
+    minify: true,
+    cssMinify: true,
     terserOptions: { compress: false, mangle: false },
   },
   define: { "process.env.NODE_ENV": "'development'" },
@@ -22,12 +22,22 @@ const config = {
   plugins: [
     tailwindcss(),
     tsConfigPaths(),
-    tanstackStart({ customViteReactPlugin: true }),
+    tanstackStart({
+      customViteReactPlugin: true,
+      prerender: {
+        // Enable prerendering
+        enabled: true,
+      }
+    }),
     tanstackRouter({
       target: 'react',
       autoCodeSplitting: true,
     }),
-    react(),
+    react({
+      babel: {
+        plugins: ['babel-plugin-react-compiler'],
+      },
+    }),
     viteStaticCopy({
       targets: [
         { src: "./assets/*", dest: "assets" },

@@ -1,26 +1,28 @@
 /* Netflix Hero Section Styles */
 .hero {
   position: relative;
-  /* height: 80vh; */
   min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  max-width: 120rem;
+  width: 100%;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
 }
+
 .overlay {
-  background: url("../assets/images/hero-background.jpg");
-  background-position: center;
-  background-blend-mode: darken;
-  background-color: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(26, 26, 26, 0.6) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 3;
-  opacity: 0.2;
+  z-index: 1;
 }
 
 .content {
@@ -30,6 +32,9 @@
   max-width: 600px;
   padding: 0 24px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .textContent {
@@ -53,9 +58,9 @@
 }
 
 .ctaButton {
-  background: #e50914;
+  background: var(--netflix-red, #e50914);
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius, 6px);
   color: white;
   padding: 16px 32px;
   font-size: 1.125rem;
@@ -64,15 +69,22 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: none;
   box-shadow: 0 4px 16px rgba(229, 9, 20, 0.3);
+  min-width: 200px;
+  justify-content: center;
 }
 
 .ctaButton:hover {
-  background: #f40612;
+  background: var(--netflix-red-hover, #f40612);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(229, 9, 20, 0.4);
+  box-shadow: 0 8px 25px rgba(229, 9, 20, 0.5);
+}
+
+.ctaButton:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
 }
 
 .ctaButton:active {

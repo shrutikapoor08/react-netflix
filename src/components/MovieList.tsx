@@ -3,6 +3,7 @@ import MovieCard from "./MovieCard";
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useNavigate } from '@tanstack/react-router';
+import '../App.css'
 
 const MovieList = ({ movies }: MovieListProps) => {
     const [showLeftArrow, setShowLeftArrow] = useState(false);

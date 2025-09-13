@@ -21,6 +21,7 @@
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
+    "@mux/mux-player-react": "^3.6.0",
     "@radix-ui/react-slot": "^1.2.3",
     "@tanstack/router-cli": "^1.131.36",
     "@tanstack/router-plugin": "^1.131.36",
@@ -29,8 +30,10 @@
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
+    "babel-plugin-react-compiler": "19.1.0-rc.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "eslint-plugin-react-hooks": "^6.0.0-rc.2",
     "jsdom": "^26.0.0",
     "lucide-react": "^0.542.0",
     "tailwind-merge": "^3.3.1",

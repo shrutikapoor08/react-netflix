@@ -1,6 +1,6 @@
 /* Netflix Header Styles */
 .header {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
@@ -15,6 +15,7 @@
 }
 
 .container {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
@@ -47,24 +48,30 @@
 }
 
 .signOutButton {
-  background: #e50914;
+  background: var(--netflix-red, #e50914);
   border: none;
-  border-radius: 4px;
+  border-radius: var(--radius-sm, 4px);
   color: white;
   padding: 8px 16px;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .signOutButton:hover {
-  background: #f40612;
+  background: var(--netflix-red-hover, #f40612);
+  transform: translateY(-1px);
 }
 
-.signOutButton:focus {
+.signOutButton:focus,
+.signOutButton:focus-visible {
   outline: 2px solid rgba(255, 255, 255, 0.8);
   outline-offset: 2px;
+}
+
+.signOutButton:active {
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {

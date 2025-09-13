@@ -4,7 +4,6 @@ import { TanstackDevtools } from '@tanstack/react-devtools'
 import { ClerkProvider } from '@clerk/clerk-react'
 import { HeadContent, Scripts } from '@tanstack/react-router'
 import Header from "../components/Header"
-import '../index.css'
 import appCss from '~/App.css?url'
 import '../components/Header.module.css'
 import '../components/Hero.module.css'
@@ -54,17 +53,6 @@ function RootComponent() {
           <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
             <Header />
             <Outlet />
-            <TanstackDevtools
-              config={{
-                position: 'bottom-left',
-              }}
-              plugins={[
-                {
-                  name: 'Tanstack Router',
-                  render: <TanStackRouterDevtoolsPanel />,
-                },
-              ]}
-            />
           </ClerkProvider>
         </div>
         <Scripts />

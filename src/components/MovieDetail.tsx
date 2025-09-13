@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
-import MoviePlayer from './MoviePlayer';
+import React from 'react';
 import { Link } from '@tanstack/react-router';
-import movieData from '../data/movies.json';
+import { Star, Play, Plus, ArrowLeft } from 'lucide-react';
+import { Badge } from './ui/badge';
+import styles from './MovieDetail.module.css';
 
 interface MovieDetailProps {
   movie: {
@@ -12,71 +13,164 @@ interface MovieDetailProps {
     overview: string;
     poster_path?: string;
     backdrop_path?: string;
+    runtime?: number;
+    genres?: Array<{ id: number; name: string }>;
+    production_companies?: Array<{ id: number; name: string }>;
+    spoken_languages?: Array<{ iso_639_1: string; name: string }>;
   };
 }
 
+const TMDB_IMAGES_ASSET_URL = "https://image.tmdb.org/t/p/w500/";
+const TMDB_BACKDROP_URL = "https://image.tmdb.org/t/p/w1280/";
+
 const MovieDetail: React.FC<MovieDetailProps> = ({ movie }) => {
-
-  const randomMovie = movieData[Math.floor(Math.random() * movieData.length)];
-
   if (!movie) {
     return (
-      <div className="container mx-auto px-4 py-8">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Movie not found</h1>
-          <Link to="/">
-            <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-              Back to Home
-            </button>
+      <div className={styles.container}>
+        <div className={styles.notFound}>
+          <h1 className={styles.notFoundTitle}>Movie not found</h1>
+          <p className={styles.notFoundMessage}>
+            The movie you're looking for doesn't exist or has been removed.
+          </p>
+          <Link to="/" className={styles.backButton}>
+            <ArrowLeft size={16} />
+            Back to Home
           </Link>
         </div>
       </div>
     );
   }
 
+  const releaseYear = movie.release_date ? new Date(movie.release_date).getFullYear() : 'Unknown';
+  const rating = movie.vote_average ? movie.vote_average.toFixed(1) : 'N/A';
+  const ratingStars = movie.vote_average ? Math.round(movie.vote_average / 2) : 0;
+
+  const formatRuntime = (minutes: number) => {
+    const hours = Math.floor(minutes / 60);
+    const mins = minutes % 60;
+    return `${hours}h ${mins}m`;
+  };
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <Link to="/">
-        <button
-          className="mb-4 px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 transition-colors"
-          aria-label="Navigate back to the homepage"
-        >
-          ← Back
-        </button>
+    <div className={styles.container}>
+      <Link to="/" className={styles.backButton}>
+        <ArrowLeft size={16} />
+        Back to Movies
       </Link>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-1">
-          {movie.poster_path && (
-            <img
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt={`${movie.title} poster`}
-              className="w-full rounded-lg shadow-lg"
-            />
-          )}
+      {/* Hero Section */}
+      <div className={styles.heroSection}>
+        {movie.backdrop_path && (
+          <img
+            src={TMDB_BACKDROP_URL + movie.backdrop_path}
+            alt={`${movie.title} backdrop`}
+            className={styles.backdropImage}
+          />
+        )}
+        <div className={styles.heroOverlay} />
+
+        <div className={styles.heroContent}>
+          <div className={styles.contentGrid}>
+            {/* Poster */}
+            <div className={styles.posterSection}>
+              <img
+                src={TMDB_IMAGES_ASSET_URL + movie.poster_path}
+                alt={`${movie.title} poster`}
+                className={styles.posterImage}
+                placeholder="/placeholder-movie.svg"
+              />
+            </div>
+
+            {/* Movie Info */}
+            <div className={styles.movieInfo}>
+              <h1 className={styles.movieTitle}>{movie.title}</h1>
+
+              <div className={styles.movieMeta}>
+                <span className={styles.releaseYear}>{releaseYear}</span>
+
+                <div className={styles.rating}>
+                  <div className={styles.ratingStars}>
+                    {'★'.repeat(ratingStars)}{'☆'.repeat(5 - ratingStars)}
+                  </div>
+                  <span className={styles.ratingValue}>{rating}</span>
+                </div>
+
+                {movie.runtime && (
+                  <Badge variant="secondary" className="bg-black/60 text-white border-none">
+                    {formatRuntime(movie.runtime)}
+                  </Badge>
+                )}
+              </div>
+
+              {movie.overview && (
+                <p className={styles.overview}>{movie.overview}</p>
+              )}
+
+              <div className={styles.actionButtons}>
+                <button className={styles.playButton}>
+                  <Play size={20} fill="white" />
+                  Play Movie
+                </button>
+                <button className={styles.secondaryButton}>
+                  <Plus size={20} />
+                  Add to List
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div className="lg:col-span-2">
-          <h1 className="text-4xl font-bold mb-4">{movie.title}</h1>
+      {/* Details Section */}
+      <div className={styles.detailsSection}>
+        <h2 className={styles.sectionTitle}>Movie Details</h2>
 
-          <div className="flex flex-wrap gap-4 mb-6 text-sm text-gray-300">
-            <span className="bg-gray-800 px-3 py-1 rounded">
-              Release Date: {new Date(movie.release_date).toLocaleDateString()}
+        <div className={styles.movieDetails}>
+          <div className={styles.detailItem}>
+            <span className={styles.detailLabel}>Release Date</span>
+            <span className={styles.detailValue}>
+              {movie.release_date ? new Date(movie.release_date).toLocaleDateString() : 'Unknown'}
             </span>
-            <span className="bg-yellow-600 px-3 py-1 rounded text-black font-semibold">
-              ⭐ {movie.vote_average.toFixed(1)}
-            </span>
           </div>
 
-          <div className="mb-8">
-            <h2 className="text-xl font-semibold mb-3">Overview</h2>
-            <p className="text-gray-300 leading-relaxed">{movie.overview}</p>
+          <div className={styles.detailItem}>
+            <span className={styles.detailLabel}>Rating</span>
+            <span className={styles.detailValue}>{rating}/10</span>
           </div>
 
-          <div>
-            <h2 className="text-xl font-semibold mb-3">Watch Trailer</h2>
-            <MoviePlayer movie={randomMovie} />
-          </div>
+          {movie.runtime && (
+            <div className={styles.detailItem}>
+              <span className={styles.detailLabel}>Duration</span>
+              <span className={styles.detailValue}>{formatRuntime(movie.runtime)}</span>
+            </div>
+          )}
+
+          {movie.genres && movie.genres.length > 0 && (
+            <div className={styles.detailItem}>
+              <span className={styles.detailLabel}>Genres</span>
+              <span className={styles.detailValue}>
+                {movie.genres.map(genre => genre.name).join(', ')}
+              </span>
+            </div>
+          )}
+
+          {movie.spoken_languages && movie.spoken_languages.length > 0 && (
+            <div className={styles.detailItem}>
+              <span className={styles.detailLabel}>Languages</span>
+              <span className={styles.detailValue}>
+                {movie.spoken_languages.map(lang => lang.name).join(', ')}
+              </span>
+            </div>
+          )}
+
+          {movie.production_companies && movie.production_companies.length > 0 && (
+            <div className={styles.detailItem}>
+              <span className={styles.detailLabel}>Production</span>
+              <span className={styles.detailValue}>
+                {movie.production_companies.slice(0, 3).map(company => company.name).join(', ')}
+              </span>
+            </div>
+          )}
         </div>
       </div>
     </div>
