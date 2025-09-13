@@ -54,7 +54,7 @@
 :root {
   /* Base radius */
   --radius: 0.625rem;
-
+  background: #000000;
   /* Typography */
   font-family:
     "Inter", "Poppins", system-ui, Avenir, Helvetica, Arial, sans-serif;
