@@ -3,19 +3,32 @@ import React, { useState } from 'react';
 import { Badge } from "@/components/ui/badge"
 import { Star, Play } from "lucide-react"
 import { Card } from './ui/card';
+import { useRouter } from '@tanstack/react-router';
 import type { MovieCardProps } from '@/types';
 
 const TMDB_IMAGES_ASSET_URL = "https://image.tmdb.org/t/p/w500/";
 
 const MovieCard: React.FC<MovieCardProps> = ({ movie, onMovieClick }) => {
   const [isHovered, setIsHovered] = useState(false)
+  const router = useRouter();
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    // Prefetch movie detail route on hover with a small delay
+    setTimeout(() => {
+      router.preloadRoute({
+        to: '/movie/$id',
+        params: { id: movie.id.toString() }
+      });
+    }, 200);
+  };
 
   return (
     <Card
       className="group relative overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl outline-blue-200 bg-card p-0 border-0 md:min-w-[180px] w-[7rem]"
       role="button"
       tabIndex={0}
-      onMouseEnter={() => setIsHovered(true)}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => onMovieClick(movie)}
       onKeyDown={(e) => {

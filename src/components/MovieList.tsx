@@ -2,12 +2,13 @@ import type { Movie, MovieListProps } from "@/types";
 import MovieCard from "./MovieCard";
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useNavigate } from '@tanstack/react-router';
+import { useNavigate, useRouter } from '@tanstack/react-router';
 import '../App.css'
 
 const MovieList = ({ movies }: MovieListProps) => {
     const listRef = useRef<HTMLUListElement>(null);
     const navigate = useNavigate();
+    const router = useRouter();
 
     const handleScroll = (direction) => {
         const container = listRef.current;
@@ -20,6 +21,14 @@ const MovieList = ({ movies }: MovieListProps) => {
 
     const handleMovieClick = (movie: Movie) => {
         navigate({ to: `/movie/${movie.id}` });
+    };
+
+    const handleMovieHover = (movie: Movie) => {
+        // Prefetch the movie detail route when user hovers
+        router.preloadRoute({
+            to: '/movie/$id',
+            params: { id: movie.id.toString() }
+        });
     };
 
     return (
@@ -36,7 +45,7 @@ const MovieList = ({ movies }: MovieListProps) => {
                 className="flex overflow-x-auto overflow-y-visible space-x-4 px-4 md:px-6 py-4 scrollbar-hide relative"
             >
                 {movies.map((movie: Movie) => (
-                    <li key={movie.id}>
+                    <li key={movie.id} onMouseEnter={() => handleMovieHover(movie)}>
                         <MovieCard movie={movie} onMovieClick={handleMovieClick} />
                     </li>
                 ))}
