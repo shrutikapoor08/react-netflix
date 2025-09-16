@@ -1,0 +1,56 @@
+/* Enhanced Theme Module */
+.light {
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --text-shadow-color: rgba(0, 0, 0, 0.15);
+  --card-background: #ffffff;
+  --border-color: #e2e8f0;
+  --muted-color: #64748b;
+}
+
+.dark {
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --text-shadow-color: rgba(0, 0, 0, 0.8);
+  --card-background: #1a1a1a;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --muted-color: #a1a1a1;
+}
+
+/* Netflix specific theme classes */
+.netflix-theme {
+  --primary-color: #e50914;
+  --primary-hover: #f40612;
+  --secondary-color: #141414;
+  --accent-color: #2f2f2f;
+}
+
+/* Component theme variants */
+.theme-card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  border-radius: var(--radius, 8px);
+  transition: all 0.2s ease;
+}
+
+.theme-button {
+  background-color: var(--primary-color, #e50914);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm, 4px);
+  transition: all 0.2s ease;
+}
+
+.theme-button:hover {
+  background-color: var(--primary-hover, #f40612);
+  transform: translateY(-1px);
+}
+
+.theme-text {
+  color: var(--text-color);
+}
+
+.theme-muted {
+  color: var(--muted-color);
+}

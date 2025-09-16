@@ -1,29 +1,49 @@
 {
-  "name": "netflix",
+  "name": "reactflix",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "vite --port 3000",
+    "start": "vite --port 3000",
+    "build": "vite build && tsc",
+    "serve": "vite preview",
+    "test": "vitest run"
   },
   "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "vite-plugin-static-copy": "^3.1.1"
+    "@clerk/clerk-react": "^5.46.2",
+    "@tailwindcss/vite": "^4.1.13",
+    "@tanstack/react-devtools": "^0.2.2",
+    "@tanstack/react-router": "^1.131.36",
+    "@tanstack/react-router-devtools": "^1.131.5",
+    "@tanstack/react-start": "^1.131.36",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
-    "@eslint/js": "^9.30.1",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "@vitejs/plugin-react": "^4.6.0",
-    "eslint": "^9.30.1",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.3.0",
+    "@mux/mux-player-react": "^3.6.0",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@tanstack/router-cli": "^1.131.36",
+    "@tanstack/router-plugin": "^1.131.36",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.2.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "babel-plugin-react-compiler": "19.1.0-rc.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "eslint-plugin-react-hooks": "^6.0.0-rc.2",
+    "jsdom": "^26.0.0",
+    "lucide-react": "^0.542.0",
+    "tailwind-merge": "^3.3.1",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.7.2",
-    "vite": "^7.0.4"
+    "vite": "^6.3.6",
+    "vite-plugin-static-copy": "^3.1.2",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.0.5",
+    "web-vitals": "^4.2.4",
+    "zustand": "^5.0.2"
   }
 }

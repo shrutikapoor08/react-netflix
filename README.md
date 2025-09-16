@@ -7,27 +7,73 @@ Key objectives - JSX, component design.
 
 ✅ Step 2: Add multiple movie cards. -
 Key objectives - array.map, conditional rendering, css styles
+![Step 2](step-2.png)
 
-![Step 2](./src/assets/step-2.png)
+### **✅ Module 3: Building the MovieCard Component**
 
-✅ Step 3 - Adding formatting, setting standards., moving to typescript, component structuring, 
+- Styling card component
+    - calling external design libraries - card from shadcn
+        - https://netflixtechblog.com/hawkins-diving-into-the-reasoning-behind-our-design-system-964a7357547
+- event handling
+- Tailwind basics: utility-first styling
 
-Step 4: Add event handling - 
-hover effect, handling events. 
+---
 
+### **✅ Module 4: Setting up the rest of UI**
 
-Step 4: Fetching api using useEffect 
-managing data, handling error states, implementing loading.
+- Adding Header, Hero
+- CSS styles using CSS modules
+- Responsive layout for mobile → desktop
 
-Step 5: routing - clicking opens a new page. 
-Step - infinite scrolling
+---
+
+### **✅ Module 5: Data & APIs**
+
+- Fetching movie data (mock API / TMDB API)
+- Handling loading + error states
+- Mapping API data to UI components
+- API integration best practices (keys, environment variables)
+
+---
+
+### ✅ Module 6: Productionizing UI
+
+- Accessibility
+  
+---
+
+### ✅ Module 7: Horizontal scrolling using useRef
+
+- understanding how to use useRef for implement horizontal scroll
+---
+
+### ✅ Module 8: Implement routing
+
+- implement with TanStack Router
+
+---
+
+### ✅ Module 9: Implement VideoPlayer component
+
+- custom hook
+- calling TanStack router loader and useParams
+- VideoPlayer component
+
+---
+
+### ✅ **Module 10: State Management with Zustand**
+
+- When local state breaks down
+- Introducing Zustand store
+- Managing global state (dark mode)
+  
+---
+
 Step - react query for better data handling
-Step - performanc eoptimization - image optimization, preloading assets, proper format
-Step - accessibility
+
+Step - infinite scrolling
+
+Step - performance eoptimization - image optimization, preloading assets, proper format
 Step - clerk add - auth
 
 Step - adding error monitoring
-
-
-Productionaizing
-Step 6: 
