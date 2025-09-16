@@ -5,7 +5,7 @@ import { getMovies } from '@/lib/movieServerFn'
 export const Route = createFileRoute('/')({
   loader: async () => {
     try {
-      return await getMovies()
+      return await getMovies({ data: { page: 1 } })
     } catch (error) {
       console.error('Failed to load movies:', error)
       return { movies: { results: [] } }
@@ -22,5 +22,5 @@ export const Route = createFileRoute('/')({
 
 function HomePageComponent() {
   const { movies } = Route.useLoaderData()
-  return <HomePage movies={movies.results || []} />
+  return <HomePage movies={movies.results || []} movieData={movies} />
 }

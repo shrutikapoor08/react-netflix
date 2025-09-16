@@ -9,9 +9,10 @@ if (!token) {
 
 export const getMovies = createServerFn({
   method: 'GET',
-}).handler(async () => {
+}).handler(async ({ data }: { data?: { page?: number } }) => {
+  const page = data?.page || 1;
   try {
-    const response = await fetch(`${API_URL}/popular`, {
+    const response = await fetch(`${API_URL}/popular?page=${page}`, {
       headers: {
         accept: "application/json",
         Authorization: `Bearer ${token}`,
@@ -23,7 +24,6 @@ export const getMovies = createServerFn({
     }
 
     const movies = await response.json();
-    // const movies = data.results;
     return { movies };
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';

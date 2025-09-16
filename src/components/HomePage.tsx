@@ -2,13 +2,15 @@ import { useEffect } from "react";
 import useThemeStore from "../store/themeStore";
 import Hero from "./Hero";
 import MovieList from "./MovieList";
-import type { Movie } from "../types";
+import InfiniteMovieList from "./InfiniteMovieList";
+import type { Movie, MovieData } from "../types";
 
 interface HomePageProps {
   movies: Movie[];
+  movieData?: MovieData;
 }
 
-const HomePage: React.FC<HomePageProps> = ({ movies }) => {
+const HomePage: React.FC<HomePageProps> = ({ movies, movieData }) => {
   const { initializeTheme } = useThemeStore();
 
   useEffect(() => {
@@ -24,7 +26,15 @@ const HomePage: React.FC<HomePageProps> = ({ movies }) => {
             Trending Now
           </h2>
           {movies.length > 0 ? (
-            <MovieList movies={movies} />
+            movieData ? (
+              <InfiniteMovieList
+                initialMovies={movies}
+                initialPage={movieData.page}
+                totalPages={movieData.total_pages}
+              />
+            ) : (
+              <MovieList movies={movies} />
+            )
           ) : (
             <div className="px-4 md:px-6">
               <p className="text-gray-500">No movies available at the moment.</p>
