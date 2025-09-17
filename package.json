@@ -10,7 +10,6 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@clerk/clerk-react": "^5.46.2",
     "@tailwindcss/vite": "^4.1.13",
     "@tanstack/react-devtools": "^0.2.2",
     "@tanstack/react-router": "^1.131.36",

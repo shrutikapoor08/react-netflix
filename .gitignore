@@ -19,7 +19,6 @@ count.txt
 *.sw?
 /dist
 .kombai/
-.vscode
 .tanstack/
 .tanstack
 .nitro

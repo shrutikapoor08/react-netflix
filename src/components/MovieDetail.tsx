@@ -4,21 +4,10 @@ import { Star, Play, Plus, ArrowLeft } from 'lucide-react';
 import { Badge } from './ui/badge';
 import MoviePlayer from './MoviePlayer';
 import Comments from './Comments';
+import type { Movie } from '@/types';
 
 interface MovieDetailProps {
-  movie: {
-    id: number;
-    title: string;
-    release_date: string;
-    vote_average: number;
-    overview: string;
-    poster_path?: string;
-    backdrop_path?: string;
-    runtime?: number;
-    genres?: Array<{ id: number; name: string }>;
-    production_companies?: Array<{ id: number; name: string }>;
-    spoken_languages?: Array<{ iso_639_1: string; name: string }>;
-  };
+  movie?: Movie | null;
 }
 
 const TMDB_IMAGES_ASSET_URL = "https://image.tmdb.org/t/p/w500/";

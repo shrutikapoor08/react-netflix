@@ -1,19 +1,8 @@
 import { Outlet, createRootRoute } from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanstackDevtools } from '@tanstack/react-devtools'
-import { ClerkProvider } from '@clerk/clerk-react'
 import { HeadContent, Scripts } from '@tanstack/react-router'
 import Header from "../components/Header"
 import appCss from '~/App.css?url'
-import '../components/Header.module.css'
-import '../components/Hero.module.css'
-import '../components/theme.module.css'
 
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
-
-if (!PUBLISHABLE_KEY) {
-  throw new Error('Add your Clerk Publishable Key to the .env file')
-}
 
 export const Route = createRootRoute({
   head: () => ({
@@ -44,16 +33,16 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <HeadContent />
       </head>
       <body>
         <div id="root">
-          <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
-            <Header />
-            <Outlet />
-          </ClerkProvider>
+
+          <Header />
+          <Outlet />
+
         </div>
         <Scripts />
       </body>

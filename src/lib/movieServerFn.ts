@@ -3,10 +3,6 @@ import { createServerFn } from '@tanstack/react-start'
 const API_URL = 'https://api.themoviedb.org/3/movie'
 const token = import.meta.env.VITE_TMDB_AUTH_TOKEN
 
-if (!token) {
-  throw new Error('VITE_TMDB_AUTH_TOKEN environment variable is required')
-}
-
 export const getMovies = createServerFn({
   method: 'GET',
 }).handler(async () => {

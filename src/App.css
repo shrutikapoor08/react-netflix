@@ -54,12 +54,13 @@
 :root {
   /* Base radius */
   --radius: 0.625rem;
-  background: #000000;
+
   /* Typography */
   font-family:
     "Inter", "Poppins", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  color-scheme: dark;
 
   /* Rendering optimizations */
   font-synthesis: none;
@@ -104,6 +105,11 @@
   --background-color: #ffffff;
   --text-color: #0a0a0a;
   --text-shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Light mode root styles */
+:root:not(.dark) {
+  color-scheme: light;
 }
 
 /* ===== DARK THEME ===== */
@@ -155,6 +161,12 @@ body {
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
+}
+
+/* Light mode body styles */
+:root:not(.dark) body {
+  background-color: #ffffff;
+  color: #333333;
 }
 
 #root {
@@ -226,7 +238,7 @@ button:disabled {
   transform: none;
 }
 
-/* ===== NETFLIX UTILITY CLASSES ===== */
+/* ===== UTILITY CLASSES ===== */
 .netflix-red {
   color: var(--netflix-red);
 }
@@ -240,7 +252,6 @@ button:disabled {
   background-color: var(--netflix-gray);
 }
 
-/* ===== LAYOUT UTILITIES ===== */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -253,7 +264,6 @@ button:disabled {
   }
 }
 
-/* ===== SCROLLBAR UTILITIES ===== */
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -263,7 +273,6 @@ button:disabled {
   display: none;
 }
 
-/* ===== ANIMATION UTILITIES ===== */
 .group:hover .group-hover\:scale-110 {
   transform: scale(1.1);
 }

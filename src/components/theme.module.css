@@ -1,6 +1,6 @@
 /* Enhanced Theme Module */
-.light {
-  --background-color: #ffffff;
+/* .light {
+  --background-color: var(--background);
   --text-color: #333333;
   --text-shadow-color: rgba(0, 0, 0, 0.15);
   --card-background: #ffffff;
@@ -18,12 +18,12 @@
 }
 
 /* Netflix specific theme classes */
-.netflix-theme {
+/* .netflix-theme {
   --primary-color: #e50914;
   --primary-hover: #f40612;
   --secondary-color: #141414;
   --accent-color: #2f2f2f;
-}
+} */
 
 /* Component theme variants */
 .theme-card {

@@ -10,12 +10,12 @@ const MovieList = ({ movies }: MovieListProps) => {
     const navigate = useNavigate();
     const router = useRouter();
 
-    const handleScroll = (direction) => {
+    const handleScroll = (direction: 'left' | 'right') => {
         const container = listRef.current;
         if (container) {
             const scrollAmount =
                 direction === "left" ? -container.clientWidth : container.clientWidth;
-            container.scrollTo({ left: scrollAmount, behavior: "smooth" });
+            container.scrollBy({ left: scrollAmount, behavior: "smooth" });
         }
     };
 

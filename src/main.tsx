@@ -1,10 +1,10 @@
 import { StrictMode } from 'react'
-import ReactDOM from 'react-dom/client'
-import { RouterProvider, createRouter } from '@tanstack/react-router'
-import { ClerkProvider } from '@clerk/clerk-react'
-
+import ReactDOM, { hydrateRoot } from 'react-dom/client'
 // Import the generated route tree
-import { routeTree } from './routeTree.gen'
+import { createRouter } from './router'
+import { RouterClient } from '@tanstack/react-router/ssr/client'
+
+const router = createRouter()
 
 import reportWebVitals from './reportWebVitals.ts'
 
@@ -14,35 +14,26 @@ if (!PUBLISHABLE_KEY) {
   throw new Error('Add your Clerk Publishable Key to the .env file')
 }
 
-// Create a new router instance
-const router = createRouter({
-  routeTree,
-  context: {},
-  defaultPreload: 'intent',
-  scrollRestoration: true,
-  defaultStructuralSharing: true,
-  defaultPreloadStaleTime: 0,
-})
+// // Create a new router instance
+// const router = createRouter({
+//   routeTree,
+//   context: {},
+//   defaultPreload: 'intent',
+//   scrollRestoration: true,
+//   defaultStructuralSharing: true,
+//   defaultPreloadStaleTime: 0,
+// })
 
-// Register the router instance for type safety
-declare module '@tanstack/react-router' {
-  interface Register {
-    router: typeof router
-  }
-}
+// // Register the router instance for type safety
+// declare module '@tanstack/react-router' {
+//   interface Register {
+//     router: typeof router
+//   }
+// }
 
 // Render the app
-const rootElement = document.getElementById('app')
-if (rootElement && !rootElement.innerHTML) {
-  const root = ReactDOM.createRoot(rootElement)
-  root.render(
-    <StrictMode>
-      <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
-        <RouterProvider router={router} />
-      </ClerkProvider>
-    </StrictMode>,
-  )
-}
+hydrateRoot(document, <RouterClient router={router} />)
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
