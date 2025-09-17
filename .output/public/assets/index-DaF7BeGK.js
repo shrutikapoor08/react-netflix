@@ -1,0 +1,2 @@
+import{c as m,j as o}from"./main-Dp53acBY.js";const c=n=>{const e=m.c(3),{error:t}=n;let s;e[0]===Symbol.for("react.memo_cache_sentinel")?(s=o.jsx("h1",{className:"text-2xl font-bold text-red-500 mb-4",children:"Error Loading Movies"}),e[0]=s):s=e[0];let r;return e[1]!==t.message?(r=o.jsxs("div",{className:"container mx-auto px-4 py-8",children:[s,o.jsx("p",{className:"text-red-400",children:t.message})]}),e[1]=t.message,e[2]=r):r=e[2],r};export{c as errorComponent};
+//# sourceMappingURL=index-DaF7BeGK.js.map

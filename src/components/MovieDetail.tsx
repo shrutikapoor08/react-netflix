@@ -3,7 +3,6 @@ import { Link } from '@tanstack/react-router';
 import { Star, Play, Plus, ArrowLeft } from 'lucide-react';
 import { Badge } from './ui/badge';
 import MoviePlayer from './MoviePlayer';
-import Comments from './Comments';
 import type { Movie } from '@/types';
 
 interface MovieDetailProps {
@@ -188,11 +187,6 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ movie }) => {
             </div>
           )}
         </div>
-      </div>
-
-      {/* Comments Section - Client-side rendered */}
-      <div className="mb-8">
-        <Comments movieId={movie.id} />
       </div>
     </div>
   );

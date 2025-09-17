@@ -1,0 +1,69 @@
+{
+  "../../../../../../~start/default-client-entry.tsx": {
+    "file": "assets/main-Dp53acBY.js",
+    "name": "main",
+    "src": "../../../../../../~start/default-client-entry.tsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/routes/index.tsx?tsr-split=errorComponent",
+      "src/routes/index.tsx?tsr-split=component",
+      "src/routes/movie.$id.tsx?tsr-split=errorComponent",
+      "src/routes/movie.$id.tsx?tsr-split=component"
+    ],
+    "assets": [
+      "assets/App-DYYWidPm.css"
+    ]
+  },
+  "/Users/shrutikapoor/Development/react/crash-course/netflix/src/App.css": {
+    "file": "assets/App-DYYWidPm.css",
+    "src": "/Users/shrutikapoor/Development/react/crash-course/netflix/src/App.css"
+  },
+  "_badge-ItvA3-E1.js": {
+    "file": "assets/badge-ItvA3-E1.js",
+    "name": "badge",
+    "imports": [
+      "../../../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "src/routes/index.tsx?tsr-split=component": {
+    "file": "assets/index-CNK6gQSG.js",
+    "name": "index",
+    "src": "src/routes/index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../../../~start/default-client-entry.tsx",
+      "_badge-ItvA3-E1.js"
+    ],
+    "css": [
+      "assets/index-86QeCGS6.css"
+    ]
+  },
+  "src/routes/index.tsx?tsr-split=errorComponent": {
+    "file": "assets/index-DaF7BeGK.js",
+    "name": "index",
+    "src": "src/routes/index.tsx?tsr-split=errorComponent",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "src/routes/movie.$id.tsx?tsr-split=component": {
+    "file": "assets/movie._id-1NpaOAEx.js",
+    "name": "movie._id",
+    "src": "src/routes/movie.$id.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../../../~start/default-client-entry.tsx",
+      "_badge-ItvA3-E1.js"
+    ]
+  },
+  "src/routes/movie.$id.tsx?tsr-split=errorComponent": {
+    "file": "assets/movie._id-BSY-T65V.js",
+    "name": "movie._id",
+    "src": "src/routes/movie.$id.tsx?tsr-split=errorComponent",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../../../~start/default-client-entry.tsx"
+    ]
+  }
+}

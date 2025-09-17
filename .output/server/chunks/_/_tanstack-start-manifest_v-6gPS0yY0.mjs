@@ -1,0 +1,4 @@
+const s = () => ({ routes: { __root__: { filePath: "/Users/shrutikapoor/Development/react/crash-course/netflix/src/routes/__root.tsx", children: ["/", "/movie/$id"], preloads: ["/assets/main-Dp53acBY.js"], assets: [] }, "/": { filePath: "/Users/shrutikapoor/Development/react/crash-course/netflix/src/routes/index.tsx", assets: [{ tag: "link", attrs: { rel: "stylesheet", href: "/assets/index-86QeCGS6.css", type: "text/css" } }], preloads: ["/assets/index-CNK6gQSG.js", "/assets/badge-ItvA3-E1.js"] }, "/movie/$id": { filePath: "/Users/shrutikapoor/Development/react/crash-course/netflix/src/routes/movie.$id.tsx", assets: [], preloads: ["/assets/movie._id-1NpaOAEx.js", "/assets/badge-ItvA3-E1.js"] } }, clientEntry: "/assets/main-Dp53acBY.js" });
+
+export { s as tsrStartManifest };
+//# sourceMappingURL=_tanstack-start-manifest_v-6gPS0yY0.mjs.map
